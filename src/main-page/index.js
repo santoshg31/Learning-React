@@ -5,6 +5,7 @@ import HouseFilter from './house-filter';
 import SearchResults from '../search-results';
 import { useEffect, useState, useMemo } from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HouseFromQuery from '../house/house-from-query';
 
 function App() {
   const [allHouses, setAllHouses] = useState([]);  //useState is used to access the value of houses below , also note the new type of destructuring where allHouses is the value that setAllHouses function will return.
@@ -33,6 +34,9 @@ function App() {
         <Switch>
           <Route path="/searchresults/:country">
             <SearchResults allHouses={allHouses} />
+          </Route>
+          <Route path="/house/:id">
+            <HouseFromQuery allHouses={allHouses} />
           </Route>
           <Route path="/">
             <FeaturedHouse house={featuredHouse}></FeaturedHouse>

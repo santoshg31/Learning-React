@@ -5,7 +5,7 @@ const SearchResultsRow = ({ house }) => {
   const history = useHistory();
 
   const setActive = () => {
-    
+    history.push(`/house/${house.id}`)
   };
 
   return (
