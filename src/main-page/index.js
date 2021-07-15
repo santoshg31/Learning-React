@@ -1,6 +1,8 @@
 import './main-page.css';
 import Header from './header';
+import FeaturedHouse from './featured-house';
 import { useEffect, useState, useMemo } from "react";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   const [allHouses, setAllHouses] = useState([]);  //useState is used to access the value of houses below , also note the new type of destructuring where allHouses is the value that setAllHouses function will return.
@@ -22,11 +24,17 @@ function App() {
   }, [allHouses]);
 
   return (
-    <div className="container">
-      <Header 
-      subtitle="Providing houses all over the world"
-      title="I am title" />
-    </div>
+    <Router>
+      <div className="container">
+        <Header subtitle="Providing houses all over the world" />
+        <Switch>
+          <Route path="/">
+            <FeaturedHouse house={featuredHouse}></FeaturedHouse>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+    
   );
 }
 
