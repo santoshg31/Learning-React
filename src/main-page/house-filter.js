@@ -1,6 +1,9 @@
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import HouseContext from "../context/houseContext";
 
-const HouseFilter = ({ allHouses }) => {
+const HouseFilter = () => {
+  const allHouses = useContext(HouseContext);
   const history = useHistory();
 
   const countries = allHouses

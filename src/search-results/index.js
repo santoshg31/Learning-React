@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import HouseContext from "../context/houseContext";
+
 
 import SearchResultsRow from "./search-results-row";
 
-const SearchResults = ({ allHouses }) => {
+const SearchResults = () => {
+  const allHouses = useContext(HouseContext);
   const { country } = useParams();   //hook uses to retirve params from the route
   const filteredHouses = allHouses.filter((h) => h.country === country);
 
