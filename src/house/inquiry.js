@@ -8,7 +8,7 @@ const Inquiry = () => {
   });
 
   const onChange = (e) => {
-    setContactInfo({ ...contactInfo, [e.target.id]: e.target.value });  //check id property names match to the above use state object 
+    setContactInfo({ ...contactInfo, [e.target.id]: e.target.value });  //check id property names match to the above use state object and saves you writing onChage event multiple times
   };
 
   const onSubmit = (e) => {
